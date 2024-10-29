@@ -7,7 +7,7 @@ const HTTP_PREFIX = '/wayline/api/v1'
 
 // Get Wayline Files
 export const getWaylineFiles = async function (wid: string, body: {}): Promise<IWorkspaceResponse<any>> {
-  const url = `${HTTP_PREFIX}/workspaces/${wid}/waylines?order_by=${body.order_by}&page=${body.page}&page_size=${body.page_size}`
+  const url = `${HTTP_PREFIX}/workspaces/${wid}/waylines?orderBy=name desc`
   const result = await request.get(url)
   return result.data
 }
